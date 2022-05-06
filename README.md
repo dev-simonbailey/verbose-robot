@@ -146,3 +146,55 @@ where each of the objects contain the component details, described below
 ## Media
 
 There is a global media directory in **_/media_**. It is suggested that all your media is placed in here, if local to the project, otherwise just reference the media in the components.
+
+## The page files
+
+The page files are a simple copy and paste operation, with the exception that the specific page objects from the layout file ar included.
+
+### Example
+
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+        <link rel="stylesheet" href="core/core.css">
+        <script id="config" src="core/config.js"></script>
+        <script id="layout" src="core/layout.js"></script>
+        <script id="core" src="core/core.js"></script>
+    </head>
+    <body>
+        <script id="build">
+            build(header,'header');
+            build(home,'home');
+            build(footer,'footer');
+            removeBuildTags();
+        </script>
+    </body>
+</html>
+
+```
+
+We can see that this is using the 'header', 'home' and 'footer' objects from the layout file to construct the page.
+
+You can also see the **_removeBuildTags()_** function call, that cleanses the output file to remove the construction code:
+
+```
+  <script id="config" src="core/config.js"></script>
+  <script id="layout" src="core/layout.js"></script>
+  <script id="core" src="core/core.js"></script>
+```
+
+and
+
+```
+  <script id="build">
+    build(header,'header');
+    build(home,'home');
+    build(footer,'footer');
+    removeBuildTags();
+  </script>
+```
