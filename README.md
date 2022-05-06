@@ -17,18 +17,18 @@ The background for this project was to create a purely javascript "hot-swappable
 The config file is used to store the project configs, the only default one is **_displayMode_**
 
 ```
-let displayMode = 'production';
+let isDev = false; // For Production mode
 ```
 
 or
 
 ```
-let displayMode = 'development';
+let isDev = true; // For Development mode
 ```
 
-When set to **_production_**, the system will build the pages based on the **_pro_** settings in the layout file. When to **_production_**, there are several other tasks that are available, such as attribute cleansing and tag removal - More on this in the html page description.
+When set to **_false_** (production mode) the system will build the pages based on the **_pro_** settings in the layout file. When set to **_false_**, there are several other tasks that are available, such as attribute cleansing and tag removal - More on this in the html page description.
 
-In **_development_** mode, the system will build the pages based on the **_dev_** settings in the layout file and will also not invoke the attribute cleansing and tag removal features. It will also display a red border at the top of the page to visually show that it's in **_dev_** mode.
+When set to **_true_** (development mode) the system will build the pages based on the **_dev_** settings in the layout file and will also not invoke the attribute cleansing and tag removal features. It will also display a red border at the top of the page to visually show that it's in **_dev_** mode.
 
 ## Layout file
 
@@ -200,6 +200,12 @@ and
     removeBuildTags();
   </script>
 ```
+
+## Helpful notes
+
+1. When in dev mode, a red border appears at the top of the page, to remind you that you are in dev mode.
+2. When in dev mode, the elements tab in Dev Tools wil show you the data that is being used to build the element, useful for de-bugging.
+3. The config file should be in GIT ignore, so that you don't update the MAIN config with local settings.
 
 ## Next Steps
 
