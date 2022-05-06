@@ -1,0 +1,26 @@
+.login-bgimg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../media/forestbridge.jpeg);
+    height:500px;
+    max-width: 1000px;
+    margin:auto;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+  }
+  
+  .login-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .login-hr {
+    margin: auto;
+    margin-bottom:40px;
+    width: 40%;
+  }

@@ -1,0 +1,9 @@
+.footer {
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+    height: 60px;
+    background-color: #474e5d;
+    color: white;
+    text-align: center;
+  }
