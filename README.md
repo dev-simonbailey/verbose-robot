@@ -149,7 +149,7 @@ There is a global media directory in **_/media_**. It is suggested that all your
 
 ## The page files
 
-The page files are a simple copy and paste operation, with the exception that the specific page objects from the layout file ar included.
+The page files are a simple copy and paste operation, with the exception that the specific page objects from the layout file are included.
 
 ### Example
 
