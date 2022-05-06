@@ -200,3 +200,9 @@ and
     removeBuildTags();
   </script>
 ```
+
+## Next Steps
+
+1. Build a routing system
+2. Look at changing to FETCH, from XMLHttpRequest for build
+3. Add dynamic functionality with FETCH
