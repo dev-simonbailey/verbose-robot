@@ -1,2 +1,1 @@
-//let displayMode = 'production';
-let displayMode = 'development';
+let isDev = true;

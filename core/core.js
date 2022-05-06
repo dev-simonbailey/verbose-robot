@@ -1,7 +1,7 @@
 function build(page, title) {
   Object.entries(page).forEach((layoutItem) => {
-    if (displayMode == 'production') {
-      if (layoutItem[1]['pro'].disabled == false) {
+    if (!isDev) {
+      if (!layoutItem[1]['pro'].disabled) {
         addElement(
           layoutItem[0],
           layoutItem[1].name,
@@ -17,8 +17,8 @@ function build(page, title) {
         );
       }
     }
-    if (displayMode == 'development') {
-      if (layoutItem[1]['dev'].disabled == false) {
+    if (isDev) {
+      if (!layoutItem[1]['dev'].disabled) {
         addElement(
           layoutItem[0],
           layoutItem[1].name,
@@ -81,8 +81,8 @@ function addElement(
     }
   };
 
-  if (cssUse == true) {
-    if (cssInline == true) {
+  if (cssUse) {
+    if (cssInline) {
       inlineCSS(name, version, cssPosition);
     } else {
       loadCssFile(name, version, cssPosition);
@@ -92,15 +92,15 @@ function addElement(
   xhttpHTML.open('GET', file, true);
   xhttpHTML.send();
 
-  if (jsUse == true) {
-    if (jsInline == true) {
+  if (jsUse) {
+    if (jsInline) {
       inlineJS(name, version, jsPosition);
     } else {
       loadJsFile(name, version, jsPosition);
     }
   }
 
-  if (displayMode == 'production') {
+  if (!isDev) {
     elemDiv.removeAttribute('name');
     elemDiv.removeAttribute('css-use');
     elemDiv.removeAttribute('css-inline');
@@ -201,7 +201,7 @@ function inlineCSS(name, version, position) {
 }
 
 function removeBuildTags() {
-  if (displayMode == 'production') {
+  if (!isDev) {
     var buildScript = document.getElementById('build');
     buildScript.remove();
     var configScript = document.getElementById('config');
