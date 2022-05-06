@@ -149,7 +149,7 @@ There is a global media directory in **_/media_**. It is suggested that all your
 
 ## The page files
 
-The page files are a simple copy and paste operation, with the exception that the specific page objects from the layout file are included. Only the calls to the build function, with your content objects, need to change, the rest of the page stays exactly how it is.
+The page files are a simple copy and paste operation, with the exception that the specific page content objects from the layout file are included. Only the calls to the build function, with your content objects, need to change, the rest of the page stays exactly how it is.
 
 ### Example
 
