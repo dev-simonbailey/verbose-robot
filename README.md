@@ -1,6 +1,6 @@
 ## Overview
 
-The background for this project was to create a purely javascript "hot-swappable" system for creating web site, on a granular component level basis.
+The background for this project was to create a purely javascript "hot-swappable" system for creating a web site, on a granular component level basis.
 
 ## Core files
 
