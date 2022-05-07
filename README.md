@@ -6,15 +6,15 @@ The background for this project was to create a purely javascript "hot-swappable
 
 1. config.js, this controls the overall configuration options for the project.
 
-2. layout.js, that controls the elements used on each page, along with the version to be used in which mode (production or development).
+2. layout.js, this controls the elements used on each page, along with the version to be used in which mode (production or development).
 
-3. core.js is the main driver file for the project and is responsible for actually building the pages based on the config and layout
+3. core.js is the main driver file for the project and is responsible for actually building the pages based on the config and layout.
 
-4. core.css is the global css file, for style that are not component specific.
+4. core.css is the global css file, for styles that are not component specific.
 
 ## Config file
 
-The config file is used to store the project configs, the only default one is **_displayMode_**
+The config file is used to store the project configs, the only default one is **_isDev_**, that determines if the system build the development or production versions. You should ensure that the config file is in .gitignore and the server version is always set to **_false_**. Local versions, can be switched back and forth between development and production modes, by setting the state of **_isDev_**
 
 ```
 let isDev = false; // For Production mode
