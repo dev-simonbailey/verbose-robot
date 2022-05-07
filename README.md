@@ -182,7 +182,7 @@ The page files are a simple copy and paste operation, with the exception that th
 
 We can see that this is using the 'header', 'home' and 'footer' objects from the layout file to construct the page.
 
-You can also see the **_removeBuildTags()_** function call, that cleanses the output file to remove the construction code:
+You can also see the **_removeBuildTags()_** function call, that cleanses the output file to remove the construction code, when in production mode **_isDev = false_**:
 
 ```
   <script id="config" src="core/config.js"></script>
