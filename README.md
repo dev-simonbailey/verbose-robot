@@ -14,7 +14,7 @@ The background for this project was to create a purely javascript "hot-swappable
 
 ## Config file
 
-The config file is used to store the project configs, the only default one is **_isDev_**, this determines if the system build the development or production versions. You should ensure that the config file is in .gitignore and the server version is always set to **_false_**. Local versions, can be switched back and forth between development and production modes, by setting the state of **_isDev_**
+The config file is used to store the project configs, the only default one is **_isDev_**, this determines if the system builds the development or production versions for delivery to the user. You should ensure that the config file is in .gitignore and the server version is always set to **_false_**. Local versions, can be switched back and forth between development and production modes, by changing the state of **_isDev_**
 
 ```
 let isDev = false; // For Production mode
