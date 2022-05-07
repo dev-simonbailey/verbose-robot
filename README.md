@@ -212,3 +212,4 @@ and
 1. Build a routing system
 2. Look at changing to FETCH, from XMLHttpRequest for build
 3. Add dynamic functionality with FETCH
+4. Build a component preview system.
