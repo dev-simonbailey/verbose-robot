@@ -24,3 +24,69 @@ var x = setInterval(function () {
     document.getElementById('login-coming-soon').innerHTML = 'EXPIRED';
   }
 }, 1000);
+
+if (nameID) {
+  getName(nameID);
+} else {
+  getNames();
+}
+
+// SQLITE FUNCTIONS
+function getNames() {
+  namesDiv = document.getElementById('namesList');
+  let namesList = '<ul>';
+  var request = new XMLHttpRequest();
+
+  request.open(
+    'GET',
+    'http://localhost:8888/github/verbose-robot/api/getNames.php',
+    true
+  );
+  request.onload = function () {
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response);
+
+    if (request.status >= 200 && request.status < 400) {
+      data.forEach((item) => {
+        namesList += '<li>' + item.name + '</li>';
+      });
+      namesList += '</ul>';
+      namesDiv.innerHTML = namesList += '</ul>';
+    } else {
+      namesDiv.innerHTML = 'DATA ERROR';
+    }
+  };
+
+  request.send();
+}
+
+function getName(id) {
+  namesDiv = document.getElementById('namesList');
+  let namesList = '<ul>';
+  var request = new XMLHttpRequest();
+
+  request.open(
+    'GET',
+    'http://localhost:8888/github/verbose-robot/api/getName.php?id=' + id,
+    true
+  );
+  request.onload = function () {
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response);
+
+    console.info(request.status);
+
+    if (request.status == 200) {
+      data.forEach((item) => {
+        namesList += '<li>' + item.name + '</li>';
+      });
+      namesList += '</ul>';
+      namesDiv.innerHTML = namesList += '</ul>';
+    }
+    if (request.status == 400) {
+      namesDiv.innerHTML = data.Error;
+    }
+  };
+
+  request.send();
+}

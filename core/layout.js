@@ -12,7 +12,7 @@ const header = {
         inline: null,
         position: null,
       },
-      version: '1.0.0',
+      version: '1.2.0',
       disabled: false,
     },
     dev: {
