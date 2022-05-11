@@ -1,3 +1,23 @@
+const queryString = window.location.search,
+  urlParams = new URLSearchParams(queryString),
+  keys = urlParams.keys(),
+  values = urlParams.values(),
+  entries = urlParams.entries();
+let nameID = 0;
+
+for (const key of keys) console.log(key);
+// product, color, newuser, size
+
+for (const value of values) console.log(value);
+// shirt, blue, , m
+
+for (const entry of entries) {
+  if (entry[0] == 'id') {
+    nameID = entry[1];
+  }
+  console.log(`${entry[0]}: ${entry[1]}`);
+}
+
 function build(page, title) {
   Object.entries(page).forEach((layoutItem) => {
     if (!isDev) {
