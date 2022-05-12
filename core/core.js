@@ -222,13 +222,12 @@ function inlineCSS(name, version, position) {
 
 function removeBuildTags() {
   if (!isDev) {
-    var buildScript = document.getElementById('build');
-    buildScript.remove();
-    var configScript = document.getElementById('config');
-    configScript.remove();
-    var layoutScript = document.getElementById('layout');
-    layoutScript.remove();
-    var coreScript = document.getElementById('core');
-    coreScript.remove();
+    document.getElementById('build-header').remove();
+    document.getElementById('build-content').remove();
+    document.getElementById('build-footer').remove();
+    document.getElementById('remover').remove();
+    document.getElementById('config').remove();
+    document.getElementById('layout').remove();
+    document.getElementById('core').remove();
   }
 }

@@ -477,3 +477,36 @@ const footer = {
     },
   },
 };
+const plp = {
+  plp: {
+    name: 'plp-page',
+    pro: {
+      css: {
+        use: true,
+        inline: false,
+        position: 'head',
+      },
+      js: {
+        use: true,
+        inline: true,
+        position: 'body',
+      },
+      version: '1.0.0',
+      disabled: false,
+    },
+    dev: {
+      css: {
+        use: true,
+        inline: false,
+        position: 'head',
+      },
+      js: {
+        use: true,
+        inline: true,
+        position: 'body',
+      },
+      version: '1.0.0',
+      disabled: false,
+    },
+  },
+};
