@@ -66,6 +66,7 @@ where each of the objects contain the component details, described below
       version: 'integer.integer.integer',
       disabled: true || false,
       tracking: true || false,
+      service: true || false,
     },
     dev: {
       css: {
@@ -81,6 +82,7 @@ where each of the objects contain the component details, described below
       version: 'integer.integer.integer',
       disabled: true || false,
       tracking: true || false,
+      service: true || false,
     },
   },
 ```
@@ -104,6 +106,7 @@ where each of the objects contain the component details, described below
       version: '1.0.0',
       disabled: false,
       tracking: true,
+      service: false,
     },
     dev: {
       css: {
@@ -119,6 +122,7 @@ where each of the objects contain the component details, described below
       version: '2.0.0',
       disabled: false,
       tracking: false,
+      service: true,
     },
   },
 ```
@@ -148,6 +152,8 @@ where each of the objects contain the component details, described below
 > **disabled**: Use this to switch on and off the element - values valid in both Production and Development modes
 
 > **tracking**: When set to true, core will add in the tracker.js file located in the specified version. This file is where you can add in your component specific tracking code. False will stop the core loading the tracker.js.
+
+> **service**: When set to true, core will add in the service.js file located in the specified version. This file is where you can add in your component specific service code. False will stop the core loading the service.js. As service file is used for communication with the localStorage layer to pass information between pages.
 
 ## Media
 

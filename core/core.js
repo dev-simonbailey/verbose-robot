@@ -38,6 +38,7 @@ function build(page, title) {
           layoutItem[1].pro.version,
           layoutItem[1].pro.disabled,
           layoutItem[1].pro.tracking,
+          layoutItem[1].pro.service,
           title
         );
       }
@@ -56,6 +57,7 @@ function build(page, title) {
           layoutItem[1].dev.version,
           layoutItem[1].dev.disabled,
           layoutItem[1].dev.tracking,
+          layoutItem[1].dev.service,
           title
         );
       }
@@ -77,6 +79,7 @@ function addElement(
   version,
   disabled,
   tracking,
+  service,
   section
 ) {
   var elemDiv = document.createElement('div');
@@ -91,7 +94,8 @@ function addElement(
   elemDiv.setAttribute('disabled', disabled);
   elemDiv.setAttribute('version', version);
   elemDiv.setAttribute('section', section);
-  elemDiv.setAttribute('version', tracking);
+  elemDiv.setAttribute('tracking', tracking);
+  elemDiv.setAttribute('service', service);
   document.body.appendChild(elemDiv);
 
   var file = 'components/' + name + '/' + version + '/index.html';
@@ -132,6 +136,10 @@ function addElement(
     loadTracker(name, version);
   }
 
+  if (service) {
+    loadService(name, version);
+  }
+
   if (!isDev) {
     elemDiv.removeAttribute('name');
     elemDiv.removeAttribute('css-use');
@@ -144,6 +152,7 @@ function addElement(
     elemDiv.removeAttribute('version');
     elemDiv.removeAttribute('section');
     elemDiv.removeAttribute('tracking');
+    elemDiv.removeAttribute('service');
   }
 }
 
@@ -154,6 +163,17 @@ function loadTracker(filename, version) {
   jsFile.setAttribute(
     'src',
     'components/' + filename + '/' + version + '/tracker.js'
+  );
+  document.getElementsByTagName('Body').item(0).appendChild(jsFile);
+}
+
+function loadService(filename, version) {
+  var jsFile = document.createElement('script');
+  jsFile.setAttribute('name', filename + '-service');
+  jsFile.setAttribute('type', 'text/javascript');
+  jsFile.setAttribute(
+    'src',
+    'components/' + filename + '/' + version + '/service.js'
   );
   document.getElementsByTagName('Body').item(0).appendChild(jsFile);
 }

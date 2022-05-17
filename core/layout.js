@@ -15,6 +15,7 @@ const header = {
       version: '1.2.0',
       disabled: false,
       tracking: true,
+      service: false,
     },
     dev: {
       css: {
@@ -27,9 +28,10 @@ const header = {
         inline: null,
         position: null,
       },
-      version: '2.0.0',
+      version: '1.2.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
 };
@@ -50,6 +52,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -65,6 +68,7 @@ const home = {
       version: '2.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   zebratable: {
@@ -83,6 +87,7 @@ const home = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -98,6 +103,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   slideshow: {
@@ -116,6 +122,7 @@ const home = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -131,6 +138,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   productcarousel: {
@@ -149,6 +157,7 @@ const home = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -164,6 +173,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   imagegrid: {
@@ -182,6 +192,7 @@ const home = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -197,6 +208,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   productsummary: {
@@ -215,6 +227,7 @@ const home = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -230,6 +243,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   timeline: {
@@ -248,6 +262,7 @@ const home = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -263,6 +278,7 @@ const home = {
       version: '1.0.1',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
 };
@@ -283,6 +299,7 @@ const about = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -298,6 +315,7 @@ const about = {
       version: '1.0.1',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   slideshow: {
@@ -316,6 +334,7 @@ const about = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -331,6 +350,7 @@ const about = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
 };
@@ -350,6 +370,8 @@ const cube = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -364,6 +386,8 @@ const cube = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
+      service: false,
     },
   },
 };
@@ -384,6 +408,7 @@ const search = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: true,
     },
     dev: {
       css: {
@@ -399,6 +424,7 @@ const search = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: true,
     },
   },
 };
@@ -419,6 +445,7 @@ const login = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -434,6 +461,7 @@ const login = {
       version: '1.0.1',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
   slideshow2: {
@@ -452,6 +480,7 @@ const login = {
       version: '1.0.0',
       disabled: true,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -467,6 +496,7 @@ const login = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
 };
@@ -487,6 +517,7 @@ const footer = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
     dev: {
       css: {
@@ -502,6 +533,7 @@ const footer = {
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: false,
     },
   },
 };
@@ -515,13 +547,14 @@ const plp = {
         position: 'head',
       },
       js: {
-        use: true,
-        inline: true,
-        position: 'body',
+        use: false,
+        inline: null,
+        position: null,
       },
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: true,
     },
     dev: {
       css: {
@@ -530,13 +563,14 @@ const plp = {
         position: 'head',
       },
       js: {
-        use: true,
-        inline: true,
-        position: 'body',
+        use: false,
+        inline: null,
+        position: null,
       },
       version: '1.0.0',
       disabled: false,
       tracking: false,
+      service: true,
     },
   },
 };
