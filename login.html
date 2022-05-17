@@ -12,12 +12,14 @@
         <script id="core" src="core/core.js"></script>
     </head>
     <body>
-        <script id="build">
-            build(header,'header');
+        <script id="build-header">build(header,'header');</script>
+        <script id="build-content">
+            /* TODO: Place your page specific content components here
+            You should reference your page object and then pass the title, which is the name of the page object.
+            */
             build(login,'login');
-            build(footer,'footer');
-            removeBuildTags();
         </script>
-        
+        <script id="build-footer">build(footer,'footer');</script>
+        <script id="remover">removeBuildTags();</script>
     </body>
 </html>

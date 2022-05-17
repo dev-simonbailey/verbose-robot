@@ -1,3 +1,7 @@
+setCookie('id', new Date().getTime());
+
+let currentID = getCookie('id');
+
 const queryString = window.location.search,
   urlParams = new URLSearchParams(queryString),
   keys = urlParams.keys(),
@@ -33,6 +37,7 @@ function build(page, title) {
           layoutItem[1].pro.js.position,
           layoutItem[1].pro.version,
           layoutItem[1].pro.disabled,
+          layoutItem[1].pro.tracking,
           title
         );
       }
@@ -50,6 +55,7 @@ function build(page, title) {
           layoutItem[1].dev.js.position,
           layoutItem[1].dev.version,
           layoutItem[1].dev.disabled,
+          layoutItem[1].dev.tracking,
           title
         );
       }
@@ -70,6 +76,7 @@ function addElement(
   jsPosition,
   version,
   disabled,
+  tracking,
   section
 ) {
   var elemDiv = document.createElement('div');
@@ -84,6 +91,7 @@ function addElement(
   elemDiv.setAttribute('disabled', disabled);
   elemDiv.setAttribute('version', version);
   elemDiv.setAttribute('section', section);
+  elemDiv.setAttribute('version', tracking);
   document.body.appendChild(elemDiv);
 
   var file = 'components/' + name + '/' + version + '/index.html';
@@ -120,6 +128,10 @@ function addElement(
     }
   }
 
+  if (tracking) {
+    loadTracker(name, version);
+  }
+
   if (!isDev) {
     elemDiv.removeAttribute('name');
     elemDiv.removeAttribute('css-use');
@@ -131,7 +143,19 @@ function addElement(
     elemDiv.removeAttribute('disabled');
     elemDiv.removeAttribute('version');
     elemDiv.removeAttribute('section');
+    elemDiv.removeAttribute('tracking');
   }
+}
+
+function loadTracker(filename, version) {
+  var jsFile = document.createElement('script');
+  jsFile.setAttribute('name', filename + '-tracker');
+  jsFile.setAttribute('type', 'text/javascript');
+  jsFile.setAttribute(
+    'src',
+    'components/' + filename + '/' + version + '/tracker.js'
+  );
+  document.getElementsByTagName('Body').item(0).appendChild(jsFile);
 }
 
 function loadJsFile(filename, version, position) {
@@ -222,13 +246,33 @@ function inlineCSS(name, version, position) {
 
 function removeBuildTags() {
   if (!isDev) {
-    var buildScript = document.getElementById('build');
-    buildScript.remove();
-    var configScript = document.getElementById('config');
-    configScript.remove();
-    var layoutScript = document.getElementById('layout');
-    layoutScript.remove();
-    var coreScript = document.getElementById('core');
-    coreScript.remove();
+    document.getElementById('build-header').remove();
+    document.getElementById('build-content').remove();
+    document.getElementById('build-footer').remove();
+    document.getElementById('remover').remove();
+    document.getElementById('config').remove();
+    document.getElementById('layout').remove();
+    document.getElementById('core').remove();
   }
+}
+
+function setCookie(name, value, days) {
+  var expires = '';
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toUTCString();
+  }
+  document.cookie = name + '=' + (value || '') + expires + '; path=/';
+}
+
+function getCookie(name) {
+  var nameEQ = name + '=';
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
 }

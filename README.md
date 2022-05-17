@@ -65,6 +65,7 @@ where each of the objects contain the component details, described below
       },
       version: 'integer.integer.integer',
       disabled: true || false,
+      tracking: true || false,
     },
     dev: {
       css: {
@@ -79,6 +80,7 @@ where each of the objects contain the component details, described below
       },
       version: 'integer.integer.integer',
       disabled: true || false,
+      tracking: true || false,
     },
   },
 ```
@@ -101,6 +103,7 @@ where each of the objects contain the component details, described below
       },
       version: '1.0.0',
       disabled: false,
+      tracking: true,
     },
     dev: {
       css: {
@@ -115,6 +118,7 @@ where each of the objects contain the component details, described below
       },
       version: '2.0.0',
       disabled: false,
+      tracking: false,
     },
   },
 ```
@@ -142,6 +146,8 @@ where each of the objects contain the component details, described below
 > **_version_**: The version number that is being used for the respective mode. The versioning numbering system is up to you, but we would suggest a semantic system e.g '1.0.0' and your corresponding component version would be contained in a the path: **_components/component-name/version_** e.g **_components/navigation/1.0.0/_**
 
 > **disabled**: Use this to switch on and off the element - values valid in both Production and Development modes
+
+> **tracking**: When set to true, core will add in the tracker.js file located in the specified version. This file is where you can add in your component specific tracking code. False will stop the core loading the tracker.js.
 
 ## Media
 
@@ -200,6 +206,52 @@ and
     removeBuildTags();
   </script>
 ```
+
+## Tracking
+
+If you wish to include feature tracking, then you can add in a **_tracker.js_** file, in the component version directory and set the **_tracking_** flag to **_true_**.
+
+When set to true, **_core_** will pull in the **_tracker.js_** file, from the specified version and action it.
+
+### Example
+
+```
+let navBar = document.getElementById('navbar');
+let navHome = document.getElementById('nav-home');
+
+navBar.addEventListener('mouseover', function () {
+  data = {
+    item: 'Navbar Enter',
+    location: 'navbar',
+    action: 'Mouseover',
+    id: currentID,
+  };
+  console.log(data);
+});
+
+navBar.addEventListener('mouseout', function () {
+  data = {
+    item: 'Navbar Leave',
+    location: 'navbar',
+    action: 'Mouseout',
+    id: currentID,
+  };
+  console.log(data);
+});
+
+navHome.addEventListener('click', function () {
+  data = {
+    item: 'Home Link',
+    location: 'navbar',
+    action: 'click',
+    id: currentID,
+  };
+  console.log(data);
+  alert('Home Link -> Check Console');
+});
+```
+
+as can be seen, in this example, we are tracking the mouse in and out of the navbar and click event of the homepage link. We could send this info to an API to collect it and process it.
 
 ## Helpful notes
 

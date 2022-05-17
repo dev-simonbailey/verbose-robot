@@ -14,6 +14,7 @@ const header = {
       },
       version: '1.2.0',
       disabled: false,
+      tracking: true,
     },
     dev: {
       css: {
@@ -28,6 +29,7 @@ const header = {
       },
       version: '2.0.0',
       disabled: false,
+      tracking: false,
     },
   },
 };
@@ -47,6 +49,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -61,6 +64,7 @@ const home = {
       },
       version: '2.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   zebratable: {
@@ -78,6 +82,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -92,6 +97,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   slideshow: {
@@ -109,6 +115,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -123,6 +130,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   productcarousel: {
@@ -140,6 +148,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -154,6 +163,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   imagegrid: {
@@ -171,6 +181,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -185,6 +196,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   productsummary: {
@@ -202,6 +214,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -216,6 +229,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
   timeline: {
@@ -233,6 +247,7 @@ const home = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -247,6 +262,7 @@ const home = {
       },
       version: '1.0.1',
       disabled: false,
+      tracking: false,
     },
   },
 };
@@ -266,6 +282,7 @@ const about = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -280,6 +297,7 @@ const about = {
       },
       version: '1.0.1',
       disabled: false,
+      tracking: false,
     },
   },
   slideshow: {
@@ -297,6 +315,7 @@ const about = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -311,6 +330,7 @@ const about = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
 };
@@ -363,6 +383,7 @@ const search = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -377,6 +398,7 @@ const search = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
 };
@@ -396,6 +418,7 @@ const login = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -410,6 +433,7 @@ const login = {
       },
       version: '1.0.1',
       disabled: false,
+      tracking: false,
     },
   },
   slideshow2: {
@@ -427,6 +451,7 @@ const login = {
       },
       version: '1.0.0',
       disabled: true,
+      tracking: false,
     },
     dev: {
       css: {
@@ -441,6 +466,7 @@ const login = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
   },
 };
@@ -460,6 +486,7 @@ const footer = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
     },
     dev: {
       css: {
@@ -474,6 +501,42 @@ const footer = {
       },
       version: '1.0.0',
       disabled: false,
+      tracking: false,
+    },
+  },
+};
+const plp = {
+  plp: {
+    name: 'plp-page',
+    pro: {
+      css: {
+        use: true,
+        inline: false,
+        position: 'head',
+      },
+      js: {
+        use: true,
+        inline: true,
+        position: 'body',
+      },
+      version: '1.0.0',
+      disabled: false,
+      tracking: false,
+    },
+    dev: {
+      css: {
+        use: true,
+        inline: false,
+        position: 'head',
+      },
+      js: {
+        use: true,
+        inline: true,
+        position: 'body',
+      },
+      version: '1.0.0',
+      disabled: false,
+      tracking: false,
     },
   },
 };
