@@ -11,6 +11,7 @@ navBar.addEventListener('mouseover', function () {
     item: 'Navbar Enter',
     location: 'navbar',
     action: 'Mouseover',
+    id: currentID,
   };
   console.log(data);
 });
@@ -19,6 +20,7 @@ navBar.addEventListener('mouseout', function () {
     item: 'Navbar Leave',
     location: 'navbar',
     action: 'Mouseout',
+    id: currentID,
   };
   console.log(data);
 });
@@ -28,6 +30,7 @@ navPlp.addEventListener('click', function () {
     item: 'PLP link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('PLP Link -> Check Console');
@@ -38,6 +41,7 @@ navAaliyah.addEventListener('click', function () {
     item: 'Aaliyah link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('Aaliyah Link -> Check Console');
@@ -48,6 +52,7 @@ navLogin.addEventListener('click', function () {
     item: 'Login Link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('Login Link -> Check Console');
@@ -58,6 +63,7 @@ navContact.addEventListener('click', function () {
     item: 'Contact Link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('Contact Link -> Check Console');
@@ -68,6 +74,7 @@ navSearch.addEventListener('click', function () {
     item: 'Search Link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('Search Link -> Check Console');
@@ -78,6 +85,7 @@ navHome.addEventListener('click', function () {
     item: 'Home Link',
     location: 'navbar',
     action: 'click',
+    id: currentID,
   };
   console.log(data);
   alert('Home Link -> Check Console');
