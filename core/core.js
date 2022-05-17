@@ -1,3 +1,7 @@
+var uniq = 'id' + new Date().getTime();
+
+console.log(uniq);
+
 const queryString = window.location.search,
   urlParams = new URLSearchParams(queryString),
   keys = urlParams.keys(),
@@ -33,6 +37,7 @@ function build(page, title) {
           layoutItem[1].pro.js.position,
           layoutItem[1].pro.version,
           layoutItem[1].pro.disabled,
+          layoutItem[1].pro.tracking,
           title
         );
       }
@@ -50,6 +55,7 @@ function build(page, title) {
           layoutItem[1].dev.js.position,
           layoutItem[1].dev.version,
           layoutItem[1].dev.disabled,
+          layoutItem[1].dev.tracking,
           title
         );
       }
@@ -70,6 +76,7 @@ function addElement(
   jsPosition,
   version,
   disabled,
+  tracking,
   section
 ) {
   var elemDiv = document.createElement('div');
@@ -84,6 +91,7 @@ function addElement(
   elemDiv.setAttribute('disabled', disabled);
   elemDiv.setAttribute('version', version);
   elemDiv.setAttribute('section', section);
+  elemDiv.setAttribute('version', tracking);
   document.body.appendChild(elemDiv);
 
   var file = 'components/' + name + '/' + version + '/index.html';
@@ -120,6 +128,10 @@ function addElement(
     }
   }
 
+  if (tracking) {
+    loadTracker(name, version);
+  }
+
   if (!isDev) {
     elemDiv.removeAttribute('name');
     elemDiv.removeAttribute('css-use');
@@ -131,7 +143,19 @@ function addElement(
     elemDiv.removeAttribute('disabled');
     elemDiv.removeAttribute('version');
     elemDiv.removeAttribute('section');
+    elemDiv.removeAttribute('tracking');
   }
+}
+
+function loadTracker(filename, version) {
+  var jsFile = document.createElement('script');
+  jsFile.setAttribute('name', filename + '-tracker');
+  jsFile.setAttribute('type', 'text/javascript');
+  jsFile.setAttribute(
+    'src',
+    'components/' + filename + '/' + version + '/tracker.js'
+  );
+  document.getElementsByTagName('Body').item(0).appendChild(jsFile);
 }
 
 function loadJsFile(filename, version, position) {
