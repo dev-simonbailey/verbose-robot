@@ -563,9 +563,9 @@ const plp = {
         position: 'head',
       },
       js: {
-        use: false,
-        inline: null,
-        position: null,
+        use: true,
+        inline: false,
+        position: 'body',
       },
       version: '1.0.0',
       disabled: false,

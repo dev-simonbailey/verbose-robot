@@ -56,7 +56,6 @@ function getNames() {
       namesDiv.innerHTML = 'DATA ERROR';
     }
   };
-
   request.send();
 }
 
