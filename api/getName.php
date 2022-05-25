@@ -1,6 +1,6 @@
 <?php
 
-$userID = $_GET["id"];
+$searchTerm = $_GET["s"];
 
 error_reporting(E_ALL);
 
@@ -13,7 +13,7 @@ if (!$db) {
     echo $db->lastErrorMsg();
 }
 
-$query1 = "SELECT name FROM names WHERE id = '" . $userID . "'";
+$query1 = "SELECT name FROM names WHERE name LIKE '%" . $searchTerm . "%'";
 $result1 = $db->query($query1);
 $rowCount = 0;
 $resultsArray = [];
