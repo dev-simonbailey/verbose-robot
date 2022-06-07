@@ -1,6 +1,6 @@
 <?php
 
-$userID = htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8');
+$userID = htmlspecialchars(filter_var($_GET["id"], FILTER_VALIDATE_INT),  ENT_QUOTES, 'UTF-8');
 
 error_reporting(E_ALL);
 
