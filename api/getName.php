@@ -1,6 +1,6 @@
 <?php
 
-$userID = $_GET["id"];
+$userID = htmlspecialchars($_GET["id"],  ENT_QUOTES, 'UTF-8');
 
 error_reporting(E_ALL);
 
